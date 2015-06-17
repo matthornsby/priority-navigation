@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Priority-Navigation Demo</title>
+		<link rel="stylesheet" href="../src/priority-navigation.css">
+	</head>
+	<body>
+		<header>
+		<nav>
+			<ul>
+				<li data-priority="0">
+					<a href="#">Priority-Navigation Demo</a>
+				</li>
+				<li data-priority="6">
+					<a href="#">Link 1</a>
+				</li>
+				<li data-priority="1">
+					<a href="#">Link 2</a>
+				</li>
+				<li data-priority="4">
+					<a href="#">Link 3</a>
+				</li>
+				<li data-priority="2">
+					<a href="#">Link 4</a>
+				</li>
+				<li data-priority="3">
+					<a href="#">Link 5</a>
+				</li>
+				<li data-priority="5">
+					<a href="#">Link 6</a>
+				</li>
+				<li data-priority="7">
+					<a href="#">Link 7</a>
+				</li>
+				<li data-priority="8">
+					<a href="#">Link 8</a>
+				</li>
+			
+			</ul>
+		</nav>
+		</header>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="../src/priority-navigation.js?1"></script>
+		<script>
+		$(function() {
+    		
+			$("header nav ul").prioritize({
+			    more: "More&hellip;",
+				less: "Less&hellip;"
+			});
+			
+			
+		});
+		</script>
+	</body>
+</html>

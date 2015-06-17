@@ -1,0 +1,61 @@
+/* Unstyled */
+header nav {
+	width: 100%;
+}
+
+header nav ul {
+	font-size: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+header nav ul > li {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: nowrap;
+	text-align: center;
+	list-style-type: none;
+	vertical-align: middle;
+}
+
+header nav ul > li a{
+	display: block;
+	padding: .5em 2em;
+	text-decoration: none;
+}
+
+header nav ul > li a:focus,
+header nav ul > li a:hover{
+	text-decoration: underline;
+}
+
+header nav ul > li[data-priority="0"],
+header nav ul.prioritized > li.demoted,
+header nav ul.prioritized > li[data-priority="less"] {
+	position: absolute;
+	left: -100%;
+	width: 0;
+	overflow: hidden;
+}
+
+header nav ul.prioritized.opened{
+	white-space: normal;
+}
+
+header nav ul.prioritized.opened li{
+	white-space: normal;
+}
+
+header nav ul.prioritized.opened > li,
+header nav ul.prioritized.opened > li.demoted{
+	width: 50%;
+	position: static;
+}
+
+header nav ul.prioritized.opened > li[data-priority="more"]{
+	position: absolute;
+	left: -100%;
+}
+/* End Unstyled */
+
+/* Demo Styling */
