@@ -1,15 +1,16 @@
 /* Unstyled */
-header nav {
+body > header nav {
 	width: 100%;
 }
 
-header nav ul {
+body > header nav ul {
 	font-size: 0;
 	padding: 0;
 	white-space: nowrap;
+	list-style-type: none;
 }
 
-header nav ul > li {
+body > header nav ul > li {
 	font-size: 1rem;
 	display: inline-block;
 	white-space: nowrap;
@@ -18,44 +19,265 @@ header nav ul > li {
 	vertical-align: middle;
 }
 
-header nav ul > li a{
+body > header nav ul > li a{
 	display: block;
-	padding: .5em 2em;
 	text-decoration: none;
+	padding: .75em;
 }
 
-header nav ul > li a:focus,
-header nav ul > li a:hover{
+body > header nav ul > li a:focus,
+body > header nav ul > li a:hover{
 	text-decoration: underline;
 }
 
-header nav ul > li[data-priority="0"],
-header nav ul.prioritized > li.demoted,
-header nav ul.prioritized > li[data-priority="less"] {
-	position: absolute;
-	left: -100%;
-	width: 0;
-	overflow: hidden;
+body > header nav ul > li[data-priority="menu"]{
+	display: none;
 }
 
-header nav ul.prioritized.opened{
+body > header nav ul > li[data-priority="0"],
+body > header nav ul.prioritized > li.demoted,
+body > header nav ul.prioritized > li[data-priority="less"] {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px;
+	width: 1px; 
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+body > header nav ul.prioritized.opened{
 	white-space: normal;
 }
 
-header nav ul.prioritized.opened li{
+body > header nav ul.prioritized.opened li{
 	white-space: normal;
 }
 
-header nav ul.prioritized.opened > li,
-header nav ul.prioritized.opened > li.demoted{
+body > header nav ul.prioritized.opened > li,
+body > header nav ul.prioritized.opened > li.demoted{
 	width: 50%;
+	height: auto;
 	position: static;
 }
 
-header nav ul.prioritized.opened > li[data-priority="more"]{
+body > header nav ul.prioritized.opened > li[data-priority="more"]{
 	position: absolute;
 	left: -100%;
 }
 /* End Unstyled */
 
-/* Demo Styling */
+/* Demo Styling - uses display table to get a full width navigation instead of auto width */
+
+body > header{
+	padding-left: 6.5rem;
+}
+
+body > header #logo{
+	position: absolute;
+	width: 6rem;
+	height: 6rem;
+	margin-left: -6.5rem;
+	background: #777777;
+	display: block;
+	text-align: center;
+	color: #ffffff;
+	text-decoration: none;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	
+	font-size: 6rem;
+	line-height: 1;
+	overflow: hidden;
+	border-radius: .4rem;
+}
+
+
+body > header nav {
+	overflow: hidden;
+	border-radius: .4rem;
+	border: solid 1px #dddddd;
+}
+
+body > header nav ul {
+	
+	overflow: hidden;
+}
+
+body > header nav ul:not(.opened) {
+	width: 100%;
+	width: calc(100% + 1px);
+	display: table;
+	padding: 0;
+	margin-left: -2px;
+}
+
+body > header nav ul li{
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: .7rem;
+	font-weight: bold;
+	letter-spacing: .1em;
+}
+
+body > header nav ul:not(.opened) li{
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+}
+
+body > header nav ul > li[data-priority="menu"]{
+	display: none;
+}
+
+body > header nav ul:not(.opened) li a:before{
+	content: "";
+	position: absolute;
+	height: 2em;
+	margin-top: -1em;
+	top: 50%;
+	width: 1px;
+	background: #eeeeee;
+	left: 0;
+}
+
+body > header nav ul.prioritized.opened, body > header nav ul.prioritized.opened li {
+	margin: 0;
+}
+
+body > header nav ul.prioritized.opened{
+	position: relative
+}
+
+body > header nav ul.prioritized.opened li{
+	vertical-align: top;
+	margin-top: -1px;
+}
+
+body > header nav ul.prioritized.opened li:before{
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 94%;
+	background: #eeeeee;
+	left: 3%;
+}
+
+
+body > header nav ul > li a{
+	padding: .75rem 1.25rem;
+	color: #bbbbbb;
+	transition: color.33s
+	}
+	
+body > header nav ul > li a:hover, 
+body > header nav ul > li a:focus {
+	text-decoration: none;
+	color: #777777;
+}
+
+section {
+	padding:0 6.5rem;
+	margin: 3% 0;
+	font-family: sans-serif;
+	color: #666666;
+	line-height: 1.4
+}
+
+section h1,
+section h2,
+section h3,
+section header{
+	color: #444444
+}
+
+section > article {
+	max-width: 32rem;
+	margin: 0 auto;
+}
+
+section > article > header {
+	font-size: 1.5em;
+	line-height: 1.2;
+	width: 38.5rem;
+	max-width: calc(100% + 6.5rem);
+	border-bottom: solid 1px #dddddd;
+}
+
+section > article > header h1{
+	margin: 0;
+}
+
+section > article > header p{
+	margin: .25em 0 .5em;
+}
+
+@media only screen and (max-width: 40em) {
+	
+	body > header #logo{
+		height: 0;
+		width: 1em;
+		padding: 1.25rem 0;
+		font-size: 2.5rem;
+		line-height: 0;
+		overflow: visible;
+		margin-left: -3rem;
+	}
+	
+	body > header{
+		padding-left: 3rem;
+	}
+	
+	section {
+		padding:0 3rem;
+	}
+	
+	section > article > header {
+		width: 100%;
+	}
+
+	
+}
+
+@media only screen and (max-width: 30em) {
+	body > header nav ul.prioritized.opened > li,
+	body > header nav ul.prioritized.opened > li.demoted{
+		width: 100%;
+
+	}
+	
+	section {
+		padding:0 3%;
+		font-size: .9rem;
+	}
+	
+	
+	
+}
+
+@media only screen and (max-width: 25em) {
+	section {
+		font-size: .8rem;
+	}
+}
+
+
+@media only screen and (min-width: 62em) {
+	html{
+		font-size: 120%;
+	}
+}
+
+
+@media only screen and (min-width: 75em) {
+	html{
+		font-size: 140%;
+	}
+}
+
+@media only screen and (min-width: 90em) {
+	html{
+		font-size: 170%;
+	}
+}

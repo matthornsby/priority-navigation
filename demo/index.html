@@ -16,39 +16,51 @@
 	</head>
 	<body>
 		<header>
-		<nav>
-			<ul>
-				<li data-priority="0">
-					<a href="#">Priority-Navigation Demo</a>
-				</li>
-				<li data-priority="6">
-					<a href="#">Link 1</a>
-				</li>
-				<li data-priority="1">
-					<a href="#">Link 2</a>
-				</li>
-				<li data-priority="4">
-					<a href="#">Link 3</a>
-				</li>
-				<li data-priority="2">
-					<a href="#">Link 4</a>
-				</li>
-				<li data-priority="3">
-					<a href="#">Link 5</a>
-				</li>
-				<li data-priority="5">
-					<a href="#">Link 6</a>
-				</li>
-				<li data-priority="7">
-					<a href="#">Link 7</a>
-				</li>
-				<li data-priority="8">
-					<a href="#">Link 8</a>
-				</li>
-			
-			</ul>
-		</nav>
+			<a href="#" rel="me" id="logo">&infin;</a>
+			<nav>
+				<ul>
+					<li data-priority="0">
+						<a href="#">Priority-Navigation Demo</a>
+					</li>
+					<li data-priority="6">
+						<a href="#">Link 1</a>
+					</li>
+					<li data-priority="1">
+						<a href="#">Link 2</a>
+					</li>
+					<li data-priority="4">
+						<a href="#">Link 3</a>
+					</li>
+					<li data-priority="2">
+						<a href="#">Link 4</a>
+					</li>
+					<li data-priority="3">
+						<a href="#">Link 5</a>
+					</li>
+					<li data-priority="5">
+						<a href="#">Link 6</a>
+					</li>
+					<li data-priority="7">
+						<a href="#">Link 7</a>
+					</li>
+					<li data-priority="8">
+						<a href="#">Link 8</a>
+					</li>
+				
+				</ul>
+			</nav>
 		</header>
+		<section>
+			<article>
+				<header>
+					<h1>Priority Navigation</h1>
+					<p>A JQuery plugin for creating arbitrarily prioritized responsive navigation menus.</p>
+				</header>
+				<p>
+				</p>
+
+				
+		</section>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="../src/priority-navigation.js?1"></script>
@@ -57,7 +69,8 @@
     		
 			$("header nav ul").prioritize({
 			    more: "More&hellip;",
-				less: "Less&hellip;"
+				less: "&hellip;Less",
+				menu: "Menu"
 			});
 			
 			
