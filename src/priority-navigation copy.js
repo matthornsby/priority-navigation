@@ -1,16 +1,14 @@
 (function ( $ ) {
  	
-	
-	
 	$.fn.prioritize = function( options ){
 		
 		$.fn.prioritize.defaults = {
-				    more: "More&hellip;",
-					less: "Less&hellip;",
-					menu: "Menu"
+		    more: "More&hellip;",
+			less: "Less&hellip;",
+			menu: "Menu"
 		};
 		
-	// Extend our default options with those provided.
+		// Extend our default options with those provided.
 	    // Note that the first argument to extend is an empty
 	    // object – this is to keep from overriding our "defaults" object.
 	    var opts = $.extend( {}, $.fn.prioritize.defaults, options );
@@ -26,21 +24,18 @@
 			checkWidth(element);
 	
 			$( window ).resize(function() {
-								
+							
 				$(element).removeClass("truncated");
-		
+	
 				$('li[data-priority="more"], li[data-priority="less"]',element).remove();
-		
+	
 				$('li:not([data-priority="0"])',element).removeClass("demoted");
-				
+			
 				checkWidth(element);
-				
 			});
 				
 		});
 		
-
-
 		function checkWidth(element) {
 			
 			var t=0;
@@ -67,32 +62,29 @@
 				hideTheHeighest(element, options);
 								
 				moreOrLess(element, options);
-
 			} 
 		}
 		
-		
-		function moreOrLess(element, options) {
+		function moreOrLess(element) {
 
 			$('li[data-priority="more"] a', element).on( "click", function(event) {
 				event.preventDefault();
 				//console.log("click");
-		  	  	$(this).parents("ul").addClass("opened");
+				$(this).parents("ul").addClass("opened");
   	
 			});
 
 			$('li[data-priority="less"] a', element).on( "click", function(event) {
 				event.preventDefault();
 				//console.log("click");
-		  	  	$(this).parents("ul").removeClass("truncated opened");
-				$('li[data-priority="more"], li[data-priority="less"]',element).remove();
-		  	  	$('li:not([data-priority="0"])',element).removeClass("demoted");
+				$(this).parents(".prioritized").removeClass("opened");
+				
+				$('li:not([data-priority="0"])',element).removeClass("demoted");
 				checkWidth(element);
 			});
 
 		}
 		
-
 		function hideTheHeighest(element, options){
 			
 			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length;
@@ -116,10 +108,7 @@
 			}).eq(index).addClass("demoted");
 
 			checkWidth(element);
-			
-			
 		}
 	}
-
 
 }( jQuery ));

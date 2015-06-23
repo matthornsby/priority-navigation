@@ -147,7 +147,6 @@ body > header nav > ul > li{
 	
 }
 
-
 body > header nav ul.prioritized:not(.opened) li,
 html body > header nav ul.prioritized.truncated > li[data-priority="more"]{
 
@@ -215,7 +214,6 @@ body > header nav ul > li a{
 	color: #bbbbbb;
 	transition: color.33s;
 	overflow: visible;
-	overflow: visible;
 	}
 	
 body > header nav ul.prioritized> li[data-priority="more"] a:after,
@@ -226,9 +224,10 @@ body > header nav ul.prioritized> li[data-priority="less"] a:after{
 	height: 0; 
 	border-left: .9ex solid transparent;
 	border-right: .9ex solid transparent;
+
 	vertical-align: middle;
 	margin: 0 0 .2em .25em;
-	transition: border-color.33s
+	transition: border-top-color.33s
 }
 
 body > header nav ul.prioritized> li[data-priority="more"] a::after{

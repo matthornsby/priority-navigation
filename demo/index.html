@@ -22,7 +22,7 @@
 					<li data-priority="0">
 						<a href="#">Priority-Navigation Demo</a>
 					</li>
-					<li data-priority="6">
+					<li data-priority="8">
 						<a href="#">Link 1</a>
 					</li>
 					<li data-priority="1">
@@ -43,9 +43,10 @@
 					<li data-priority="7">
 						<a href="#">Link 7</a>
 					</li>
-					<li data-priority="8">
+					<li data-priority="6">
 						<a href="#">Link 8</a>
 					</li>
+					
 				
 				</ul>
 			</nav>
@@ -54,10 +55,13 @@
 			<article>
 				<header>
 					<h1>Priority Navigation</h1>
-					<p>A JQuery plugin for creating arbitrarily prioritized responsive navigation menus.</p>
+					<p>A JQuery plugin for creating arbitrarily-prioritized responsive navigation menus.</p>
 				</header>
 				<p>
+					It&rsquo;s become generally accepted that hiding menus by default, behind a hamburger icon for instance, can dampen discoverability and therefor engagement. <em>Priority Navigation</em> is a take on the <a href="https://css-tricks.com/the-priority-navigation-pattern/">Priority+ Navigation</a> pattern.
 				</p>
+				<p>The main feature that sets it apart from other examples, is that it allows for prioritization ordering independent from menu ordering.
+					</p>
 
 				
 		</section>
@@ -66,14 +70,11 @@
 		<script src="../src/priority-navigation.js?1"></script>
 		<script>
 		$(function() {
-    		
 			$("header nav ul").prioritize({
-			    more: "More&hellip;",
-				less: "&hellip;Less",
-				menu: "Menu"
+			    more: "More", //Shown in the last position when the menu has been truncated, default: More…
+				less: "Less", //Shown in the last position when the menu has been opened, default: Less…
+				menu: "Menu" //Shown when the menu has been truncated to a single item, default: Menu
 			});
-			
-			
 		});
 		</script>
 	</body>
