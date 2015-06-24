@@ -25,7 +25,11 @@
 	
 			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"]):not([data-priority="0"])').length;
 			
+<<<<<<< HEAD
 			checkWidth(element, children);
+=======
+			checkWidth(element);
+>>>>>>> gh-pages
 	
 			$( window ).resize(function() {
 				
@@ -53,16 +57,17 @@
 			var t=0;
 			
 			//calculate the width of the visible <li>s
-			$(element).children().not(".demoted").outerWidth(function(i,w){t+=w;});
-			
-			
-			//console.log("element-width: " + $(element).parent().width() + ", content-width: " + t);
+			$(element).children().not(".demoted").outerWidth(function(i,w){
+				t+=w;
+			});
 			
 			if ( $(element).css("display").indexOf("table") > -1 ) {
-				var wrapper = $(element).parent().width();
+				var wrapper = $(element).parent().outerWidth();
 			} else {
-				var wrapper = $(element).width();
+				var wrapper = $(element).outerWidth();
 			}
+			
+		
 			
 			if (wrapper < t ){
 
@@ -100,7 +105,13 @@
 		}
 		
 
+<<<<<<< HEAD
 		function hideTheHeighest(element, options, children){
+=======
+		function hideTheHeighest(element, options){
+			
+			
+>>>>>>> gh-pages
 			
 			//console.log(children);
 			
@@ -143,6 +154,7 @@
 			$( '[data-priority="' + highestVisible + '"]', element).addClass("demoted");
 			
 			
+<<<<<<< HEAD
 			//this effects performance but is required for firefox
 			if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
 			{
@@ -156,6 +168,10 @@
 			
 
 			
+=======
+			checkWidth(element);
+
+>>>>>>> gh-pages
 			
 		}
 	}
