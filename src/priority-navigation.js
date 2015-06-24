@@ -26,14 +26,17 @@
 			checkWidth(element);
 	
 			$( window ).resize(function() {
-								
-				$(element).removeClass("truncated");
+				
+				if ( !$(element).hasClass("opened") ){
+					$(element).removeClass("truncated");
 		
 				$('li[data-priority="more"], li[data-priority="less"]',element).remove();
 		
 				$('li:not([data-priority="0"])',element).removeClass("demoted");
 				
 				checkWidth(element);
+				}
+				
 				
 			});
 				
@@ -66,13 +69,13 @@
 				
 				hideTheHeighest(element, options);
 								
-				moreOrLess(element, options);
+				moreOrLess(element);
 
 			} 
 		}
 		
 		
-		function moreOrLess(element, options) {
+		function moreOrLess(element) {
 
 			$('li[data-priority="more"] a', element).on( "click", function(event) {
 				event.preventDefault();
@@ -95,11 +98,11 @@
 
 		function hideTheHeighest(element, options){
 			
-			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length;
+			//var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length;
 			
 			//console.log(children);
 			
-			if (children < 2 ) {
+			if ( $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length < 2 ) {
 				$('[data-priority="more"]',element).addClass("menu").children().text(opts.menu);
 			} else {
 				$('[data-priority="more"]',element).removeClass("menu")
@@ -107,16 +110,36 @@
 			
 			$(element).addClass("truncated");
 			
+			
+			/*
+			//this hides the leftmost instance of the highest visible data-priority
 			var max = 0, index = 0;
 			$('.truncated > *:not(.demoted):not([data-priority="more"])').each(function(i){
 			   if(parseInt($(this).data('priority'), 10) > max){
 			      max = parseInt($(this).data('priority'), 10);
 			      index = i;
 			   }
+
 			}).eq(index).addClass("demoted");
+			*/
+			
+			
+			
+			//hides all of the highest visible data-priority, which is better, but has some resize issues in chrome
+			var highestVisible = 0;
+			$('*:not(.demoted)',element).each(function(){
+				if ( $.isNumeric( $(this).data('priority') ) ){
+					
+					if(parseInt($(this).data('priority'), 10) > highestVisible){
+				      highestVisible = parseInt($(this).data('priority'), 10);
+					}
+					
+				}
+
+			});
+			$( '[data-priority="' + highestVisible + '"]', element).addClass("demoted");
 
 			checkWidth(element);
-			
 			
 		}
 	}

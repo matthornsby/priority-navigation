@@ -1,0 +1,319 @@
+/* Demo Content styling */
+
+:focus{
+	outline: none
+}
+
+.nowrap{
+	white-space: nowrap;
+}
+
+body{
+	margin: 3% 3% 0 3%;
+	font-family: sans-serif;
+}
+
+
+body > header #logo{
+	position: absolute;
+	width: 6rem;
+	height: 6rem;
+	margin-left: -6.5rem;
+	margin-left: calc(-6rem - 3%);
+	background: #777777;
+	display: block;
+	text-align: center;
+	color: #ffffff;
+	text-decoration: none;
+	
+	text-transform: uppercase;
+	
+	font-size: 6rem;
+	line-height: 1;
+	overflow: hidden;
+	border-radius: .4rem;
+	
+	transition: background-color .33s
+}
+
+body > header #logo:hover,
+body > header #logo:focus{
+	background-color: #444444;
+}
+
+
+.inline-logo{
+	background: #777777;
+	display: inline-block;
+	text-align: center;
+	color: #ffffff;
+	text-decoration: none;
+	margin: 0 .2em;
+	font-size: 1.4em;
+	width: 1em;
+	vertical-align: bottom;
+	line-height: 1;
+	overflow: hidden;
+	border-radius: .1em;
+	
+	transition: background-color .33s
+}
+
+
+
+section {
+	padding:0 6.5rem;
+	padding:0 calc(6rem + 3%);
+	margin: 3% 0;
+	color: #666666;
+	line-height: 1.4
+}
+
+section h1,
+section h2,
+section h3,
+section header{
+	color: #444444
+}
+
+section a{
+	color: #444444;
+	background-color: transparent;
+	transition: background-color .3s
+}
+
+section a:hover,
+section a:focus{
+	padding: .125em;
+	margin: -.125em;
+	background-color: #eeeeee;
+}
+
+
+
+section > article {
+	max-width: 32rem;
+	margin: 0 auto;
+}
+
+section > article > header {
+	font-size: 1.5em;
+	line-height: 1.2;
+	width: 38.5rem;
+	max-width: calc(102% + 6.5rem);
+	border-bottom: solid 1px #dddddd;
+}
+
+section > article > header h1{
+	margin: 0;
+}
+
+section > article > header p{
+	margin: .25em 0 .5em;
+}
+
+.code{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.code code{
+	overflow: hidden;
+	resize: none;
+	display: block;
+	border: none;
+	padding: 0 3%;
+	width: 100%;
+	margin: 0 -3% .5em;
+	background: #eeeeee;
+	font-family: monospace;
+	white-space: pre-wrap;
+	color: #666666;
+	font-size: 1.25em;
+	border-radius: .25em;
+	
+}
+
+figure figcaption{
+	font-size: .9em;
+	font-style: italic;
+	margin: 0;
+}
+
+
+.button-wrapper{
+	text-align: center;
+	font-size: 1.5em;
+}
+
+
+a.button{
+	
+	display: inline-block;
+	min-width: 7em;
+	text-align: center;
+	padding: 3%;
+	color: #ffffff;
+	
+	border-radius: .25rem;
+	text-decoration: none;
+	margin: 0 auto .5em !important;
+	box-shadow: 0 .1em .1em #aaaaaa;
+	position: relative;
+	top: -1px;
+}
+
+
+a.button:hover,
+a.button:focus{
+
+	padding: 3%;
+	color: #ffffff;
+	margin: 0 auto;
+	box-shadow: 0 .1em .2em #aaaaaa;
+}
+
+a.button:active{
+	box-shadow: inset 0 0 .2em rgba(0,0,0,.2);
+	top: 0;
+}
+
+a.github{
+	background: #60b044 !important;
+}
+a.download{
+	background: #5abae6 !important;
+}
+
+
+a.button:after{
+	
+	
+	font-weight: bold;
+	display: inline-block;
+	background: rgba(255,255,255,.75);
+	width: 1.5em;
+	line-height: 1.5em;
+	margin-left: 1ex;
+	border-radius: .125em;
+	transition: background-color .3s;
+}
+
+
+a.github:after{
+	color: #60b044;
+	content: "❮ ❯";
+}
+
+a.download:after{
+	color: #5abae6;
+	content: "↓";
+	text-decoration: underline;
+}
+
+a.button:hover:after,
+a.button:focus:after{
+	background: #ffffff
+}
+
+
+footer{
+	background: #eeeeee;
+	width: 100%;
+	margin: 3% -3% 0;
+	text-align: center;
+	padding: 3%;
+	border-top: solid 1px #dddddd;
+	color: #666666;
+
+}
+
+footer a{
+	color: #666666;
+	transition: color .3s;
+}
+
+footer a:hover,
+footer a:focus{
+	color: #444444;
+}
+
+@media only screen and (max-width: 40em) {
+	
+	body > header{
+		padding-left: 3rem;
+		padding-left: calc(2.5rem + 3%);
+		height: auto;
+		min-height: 0;
+	}
+	
+	
+	body > header #logo{
+		height: 2.5rem;
+		width: 2.5rem;
+		padding: 0;
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+		overflow: visible;
+		margin-left: 3rem;
+		margin-left: calc(-2.5rem - 3%);
+	}
+	
+	
+
+	
+	section {
+		padding:0 3rem;
+		padding: 0 calc(2.5rem + 3%)
+	}
+	
+	section > article > header {
+		width: 100%;
+	}
+
+	
+}
+
+@media only screen and (max-width: 30em) {
+
+	section {
+		padding:0;
+		font-size: .9rem;
+	}	
+	
+	
+	.code code{
+		border-radius: 0;
+	}
+	
+	footer{
+		font-size: .9rem;
+	}
+	
+}
+
+@media only screen and (max-width: 25em) {
+	section, footer {
+		font-size: .8rem;
+	}
+}
+
+
+@media only screen and (min-width: 66em) {
+	html{
+		font-size: 115%;
+	}
+}
+
+
+@media only screen and (min-width: 75em) {
+	html{
+		font-size: 130%;
+	}
+}
+
+@media only screen and (min-width: 90em) {
+	html{
+		font-size: 150%;
+	}
+}

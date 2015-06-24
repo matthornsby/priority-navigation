@@ -1,0 +1,207 @@
+/* Demo Menu Styling - uses display table to get a full width navigation instead of auto width */
+body{
+	margin: 3%
+}
+
+body > header{
+	padding-left: 6.5rem;
+	padding-left: calc(6rem + 3%);
+	min-height: 6rem;
+	overflow-y: hidden;
+}
+
+
+
+body > header nav {
+	margin-top: 1.75rem;
+	overflow: hidden;
+	border-radius: .4rem;
+	border: solid 1px #dddddd;
+	width: calc(100% - 2px);
+}
+
+body > header nav ul {
+	
+	overflow: hidden;
+}
+
+body > header nav ul.prioritized:not(.opened) {
+	width: 100%;
+	display: table;
+	padding: 0;
+	margin-left: -2px;
+	height: 2.5rem;
+	height: calc(2.5rem - 2px);
+}
+
+body > header nav > ul.toPrioritize > li{
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: .7rem;
+	font-weight: bold;
+	letter-spacing: .1em;
+	overflow: visible;
+	
+}
+
+
+body > header nav ul.prioritized:not(.opened) li,
+html body > header nav ul.toPrioritize.prioritized.truncated > li[data-priority="more"]{
+
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+}
+
+
+
+
+body > header nav ul.prioritized:not(.opened) li:not(.menu) a:before{
+	content: "";
+	position: absolute;
+	height: 2em;
+	margin-top: -1em;
+	top: 50%;
+	width: 1px;
+	background: #eeeeee;
+	left: 0;
+}
+
+body > header nav ul.prioritized.opened,
+body > header nav ul.prioritized.opened li,
+body > header nav ul:not(.prioritized),
+body > header nav ul:not(.prioritized) li {
+	margin: 0;
+}
+
+body > header nav ul.prioritized.opened,
+body > header nav ul:not(.prioritized){
+	position: relative
+}
+
+body > header nav ul.prioritized.opened li,
+body > header nav ul:not(.prioritized) li{
+	vertical-align: top;
+	margin-top: -1px;
+}
+
+body > header nav ul.prioritized.opened li:before,
+body > header nav ul:not(.prioritized) li:before{
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 94%;
+	background: #eeeeee;
+	left: 3%;
+}
+
+body > header nav ul.prioritized.opened li:nth-child(odd):not([data-priority="more"]):not([data-priority="less"]) a:before,
+body > header nav ul:not(.prioritized) li:nth-child(odd):not([data-priority="more"]):not([data-priority="less"]) a:before{
+	content: "";
+	position: absolute;
+	height: 2em;
+	width: 1px;
+	background: #eeeeee;
+	right: 0;
+	top: 50%;
+	margin-top: -1em;
+}
+
+body > header nav ul.toPrioritize > li a{
+	padding: .75rem 1.25rem;
+	color: #bbbbbb;
+	transition: color.33s;
+	overflow: visible;
+	overflow: visible;
+	}
+	
+body > header nav ul.toPrioritize.opened > li a	{
+	padding-top: .9rem ;
+	padding-bottom: .9rem;
+}
+	
+body > header nav ul.prioritized> li[data-priority="more"] a:after,
+body > header nav ul.prioritized> li[data-priority="less"] a:after{
+	content: "";
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-left: .9ex solid transparent;
+	border-right: .9ex solid transparent;
+	vertical-align: middle;
+	margin: 0 0 .2em .25em;
+	transition: border-color.33s
+}
+
+body > header nav ul.prioritized> li[data-priority="more"] a::after{
+		border-top: 1ex solid #bbbbbb;
+}
+body > header nav ul.prioritized> li[data-priority="less"] a::after{
+		border-bottom: 1ex solid #bbbbbb;
+}
+
+	
+body > header nav ul.toPrioritize > li a:hover, 
+body > header nav ul.toPrioritize > li a:focus {
+	text-decoration: none;
+	color: #666666;
+}
+
+body > header nav ul.prioritized> li[data-priority="more"] a:hover::after,
+body > header nav ul.prioritized> li[data-priority="more"] a:focus::after,
+body > header nav ul.prioritized> li[data-priority="less"] a:hover::after,
+body > header nav ul.prioritized> li[data-priority="less"] a:focus::after{
+	border-top-color: #666666;
+	border-bottom-color: #666666;
+}
+
+
+
+
+
+@media only screen and (max-width: 40em) {
+	
+	body > header{
+		padding-left: 3rem;
+		padding-left: calc(2.5rem + 3%);
+		height: auto;
+		min-height: 0;
+	}
+	
+	
+	body > header #logo{
+		height: 0;
+		width: 1em;
+		padding: 1.25rem 0;
+		font-size: 2.5rem;
+		line-height: 0;
+		overflow: visible;
+		margin-left: 3rem;
+		margin-left: calc(-2.5rem - 3%);
+	}
+	
+	
+	body > header > nav{
+		margin-top: 0;
+		line-height: 1.125rem;
+	}
+	
+	
+}
+
+@media only screen and (max-width: 30em) {
+	body > header nav ul.toPrioritize.prioritized.opened > li,
+	body > header nav ul.toPrioritize.prioritized.opened > li.demoted,
+	body > header nav ul.toPrioritize:not(.prioritized) > li{
+		width: 100%;
+
+	}
+	
+	body > header nav ul.opened li:nth-child(odd) a:before{
+		
+		display: none;
+		
+	}
+
+	
+}
