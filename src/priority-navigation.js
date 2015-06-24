@@ -25,7 +25,7 @@
 	
 			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"]):not([data-priority="0"])').length;
 			
-			checkWidth(element, children);
+			checkWidth(element);
 	
 			$( window ).resize(function() {
 				
@@ -38,7 +38,7 @@
 		
 				$('li:not([data-priority="0"])',element).removeClass("demoted");
 				
-				checkWidth(element, children);
+				checkWidth(element);
 				}
 				
 				
@@ -48,21 +48,22 @@
 		
 
 
-		function checkWidth(element, children) {
+		function checkWidth(element) {
 			
 			var t=0;
 			
 			//calculate the width of the visible <li>s
-			$(element).children().not(".demoted").outerWidth(function(i,w){t+=w;});
-			
-			
-			//console.log("element-width: " + $(element).parent().width() + ", content-width: " + t);
+			$(element).children().not(".demoted").outerWidth(function(i,w){
+				t+=w;
+			});
 			
 			if ( $(element).css("display").indexOf("table") > -1 ) {
-				var wrapper = $(element).parent().width();
+				var wrapper = $(element).parent().outerWidth();
 			} else {
-				var wrapper = $(element).width();
+				var wrapper = $(element).outerWidth();
 			}
+			
+		
 			
 			if (wrapper < t ){
 
@@ -71,7 +72,7 @@
 					//console.log("no");
 				} 
 				
-				hideTheHeighest(element, options, children);
+				hideTheHeighest(element, options);
 								
 				moreOrLess(element);
 
@@ -79,7 +80,7 @@
 		}
 		
 		
-		function moreOrLess(element, children) {
+		function moreOrLess(element) {
 
 			$('li[data-priority="more"] a', element).on( "click", function(event) {
 				event.preventDefault();
@@ -94,13 +95,13 @@
 		  	  	$(this).parents("ul").removeClass("truncated opened");
 				$('li[data-priority="more"], li[data-priority="less"]',element).remove();
 		  	  	$('li:not([data-priority="0"])',element).removeClass("demoted");
-				checkWidth(element, children);
+				checkWidth(element);
 			});
 
 		}
 		
 
-		function hideTheHeighest(element, options, children){
+		function hideTheHeighest(element, options){
 			
 			
 			
@@ -136,8 +137,6 @@
 					
 					if(parseInt($(this).data('priority'), 10) > highestVisible){
 				      highestVisible = parseInt($(this).data('priority'), 10);
-				      
-				      console.log("highest: " + highestVisible);
 					}
 					
 				}
@@ -145,18 +144,9 @@
 			});
 			$( '[data-priority="' + highestVisible + '"]', element).addClass("demoted");
 			
-			if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
-			{
-			    if (children > 0){
-					children = children -1;
-					checkWidth(element, children);
-				}
-			} else {
-				checkWidth(element, children);
-			}
 			
+			checkWidth(element);
 
-			
 			
 		}
 	}
