@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Priority Navigation Demo</title>
+		<link rel="stylesheet" href="src/priority-navigation.css"><!-- default styling, required for functionality -->
+		<link rel="stylesheet" href="demo/demo-nav.css"><!-- styling for this demo only, including display:table overrides -->
+		<link rel="stylesheet" href="demo/demo-content.css"><!-- content styling, you don't need this -->
+	</head>
+	<body>
+		<header>
+			<a href="#" rel="me" id="logo">&infin;</a>
+			<nav>
+				<ul class="toPrioritize">
+					<li data-priority="0">
+						<a href="#">Priority-Navigation Demo</a>
+					</li>
+					<li data-priority="1">
+						<a href="#">Priority 1</a>
+					</li>
+					<li data-priority="2">
+						<a href="#">Priority 2</a>
+					</li>
+					<li data-priority="4">
+						<a href="#">Priority 4a</a>
+					</li>
+					<li data-priority="4">
+						<a href="#">Priority 4b</a>
+					</li>
+			
+					<li data-priority="3">
+						<a href="#">Priority 3</a>
+					</li>
+			
+					<li data-priority="5">
+						<a href="#">Priority 5</a>
+					</li>
+					
+				
+				</ul>
+			</nav>
+		</header>
+		<section>
+			
+			<article>
+				
+				<header>
+					<h1>Priority Navigation</h1>
+					<p>A JQuery plugin for creating arbitrarily-prioritized responsive navigation menus.</p>
+				</header>
+				
+				<p>
+					It&rsquo;s become generally accepted that hiding menus by default, behind a hamburger icon for instance, can dampen discoverability and therefor engagement. <em>Priority Navigation</em> is a take on the <a href="https://css-tricks.com/the-priority-navigation-pattern/">Priority+ Navigation</a> pattern.
+				</p>
+				
+				<p>
+					The main feature that sets it apart from other examples, is that it allows for prioritization ordering independent from menu ordering. Menu item prioritization is managed by applying data-attributes to the elements.
+				</p>
+
+				<p class="button-wrapper">
+					<a href="https://github.com/matthornsby/Priority-Navigation" class="github button">GitHub</a>
+					
+					<a href="https://github.com/matthornsby/priority-navigation/archive/master.zip" class="download button">Download</a>
+				</p>
+				
+				<h2>The HTML</h2>
+				
+				<figure class="code">
+
+<code>
+&lt;ul class=&quot;toPrioritize&quot;&gt;
+  &lt;li data-priority=&quot;0&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority-Navigation Demo&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;1&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;2&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 2&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;4&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 4a&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;4&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 4b&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;3&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 3&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li data-priority=&quot;5&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority 5&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+    
+</code>
+				
+					<figcaption>
+						Here's the list from this page.
+					</figcaption>
+
+				</figure>
+				
+				<p> Items are demoted (both hidden from view <em>and</em> given the class demoted) in descending order, starting with the highest data-priority value set, in this example "Priority 5" has  a data-priority value of&nbsp;5.</p>
+				
+				<p>Items with the same data-priority value are demoted simultaneously, given you the option of connecting particular elements as sets, this this example "Priority 4a" and "Priority 4b" both have a data-priority value of&nbsp;4.</p>
+				
+				<p>You may optionally include elements with a data-priority value of 0. These items are hidden from closed view, even if the menu has not been truncated. The original intention of this feature was to allow the display of a link to the site homepage as part of an opened menu, as a supplement to a link provided elsewhere. In this example "Priority-Navigation Demo" is only visible if the menu is opened, but is also accessible by clicking the logo (<span class="inline-logo">∞</span>).
+				</p>	
+					
+				<h2>The CSS</h2>
+				
+				<p>Include <a href="src/priority-navigation.css">src/priority-navigation.css</a> or its content in your own stylesheet.</p>
+				
+				<p>The default styling displays the menu items as <em>inline-block</em>, which lets you align it as normal text. However, this example includes <a href="demo/demo-nav.css">additional styling</a> to display the menu as a <em>table</em> which allows to fully-justify the menu.</p>
+				
+				
+					
+				<h2>The JavaScript</h2>
+				
+				<p>Include <a href="src/priority-navigation.min.js">src/priority-navigation.min.js</a> or its content in your own javascript. <a href="src/priority-navigation.js">An un-minified version</a> is available for your review.</p>
+				
+				<figure class="code">
+
+<code>
+$(".toPrioritize").prioritize();
+    
+</code>
+
+					<figcaption>
+					That's pretty much it. Or, if you want to go a little further…
+					</figcaption>
+				</figure>
+				
+				<figure class="code">
+
+<code>
+$(".toPrioritize").prioritize({
+  more: "More", //default: More…
+  less: "Less", //default: Less…
+  menu: "Navigation" //default: Menu
+});
+    
+</code>
+
+					<figcaption>
+					There are a few available options if you want to override the default label text.
+					</figcaption>
+				</figure>
+				
+				<p class="button-wrapper">
+					<a href="https://github.com/matthornsby/Priority-Navigation" class="github button">GitHub</a>
+					
+					<a href="https://github.com/matthornsby/priority-navigation/archive/master.zip" class="download button">Download</a>
+				</p>
+
+				
+		</section>
+		
+		<footer>
+			<p>Created by <a href="http://matthornsby.com">Matt Hornsby</a>, <span class="nowrap">originally for <a href="http://mycollegeadvocate.com">My College Advocate</a>.</span></p>
+		</footer>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="../src/priority-navigation.min.js?1"></script>
+		<script>
+		$(function() {
+			$(".toPrioritize").prioritize({
+			    more: "More",
+			    less: "Less"
+			});
+			
+		});
+		</script>
+	</body>
+</html>
