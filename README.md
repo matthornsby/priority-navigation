@@ -2,8 +2,6 @@
 
 ## A JQuery plugin for creating arbitrarily-prioritized responsive navigation menus.
 
-## Currently borking in Firefox, I'm looking into that.
-
 It’s become generally accepted that hiding menus by default, behind a hamburger icon for instance, can dampen discoverability and therefor engagement. *Priority Navigation* is a take on the [Priority+ Navigation](https://css-tricks.com/the-priority-navigation-pattern/) pattern.
 
 The main feature that sets it apart from other examples, is that it allows for prioritization ordering independent from menu ordering. Menu item prioritization is managed by applying data-attributes to the elements.
