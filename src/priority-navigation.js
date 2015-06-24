@@ -23,9 +23,13 @@
 			
 			$('li[data-priority="0"]',element).addClass("demoted");
 	
-			checkWidth(element);
+			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"]):not([data-priority="0"])').length;
+			
+			checkWidth(element, children);
 	
 			$( window ).resize(function() {
+				
+				var children = $(element).children(':not([data-priority="more"]):not([data-priority="less"]):not([data-priority="0"])').length;
 				
 				if ( !$(element).hasClass("opened") ){
 					$(element).removeClass("truncated");
@@ -34,7 +38,7 @@
 		
 				$('li:not([data-priority="0"])',element).removeClass("demoted");
 				
-				checkWidth(element);
+				checkWidth(element, children);
 				}
 				
 				
@@ -44,7 +48,7 @@
 		
 
 
-		function checkWidth(element) {
+		function checkWidth(element, children) {
 			
 			var t=0;
 			
@@ -67,7 +71,7 @@
 					//console.log("no");
 				} 
 				
-				hideTheHeighest(element, options);
+				hideTheHeighest(element, options, children);
 								
 				moreOrLess(element);
 
@@ -75,7 +79,7 @@
 		}
 		
 		
-		function moreOrLess(element) {
+		function moreOrLess(element, children) {
 
 			$('li[data-priority="more"] a', element).on( "click", function(event) {
 				event.preventDefault();
@@ -90,15 +94,13 @@
 		  	  	$(this).parents("ul").removeClass("truncated opened");
 				$('li[data-priority="more"], li[data-priority="less"]',element).remove();
 		  	  	$('li:not([data-priority="0"])',element).removeClass("demoted");
-				checkWidth(element);
+				checkWidth(element, children);
 			});
 
 		}
 		
 
-		function hideTheHeighest(element, options){
-			
-			//var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length;
+		function hideTheHeighest(element, options, children){
 			
 			//console.log(children);
 			
@@ -123,8 +125,7 @@
 			}).eq(index).addClass("demoted");
 			*/
 			
-			
-			
+						
 			//hides all of the highest visible data-priority, which is better, but has some resize issues in chrome
 			var highestVisible = 0;
 			$('*:not(.demoted)',element).each(function(){
@@ -132,14 +133,29 @@
 					
 					if(parseInt($(this).data('priority'), 10) > highestVisible){
 				      highestVisible = parseInt($(this).data('priority'), 10);
+				      
+				      console.log("highest: " + highestVisible);
 					}
 					
 				}
 
 			});
 			$( '[data-priority="' + highestVisible + '"]', element).addClass("demoted");
+			
+			
+			//this effects performance but is required for firefox
+			if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+			{
+			    if (children > 0){
+					children = children -1;
+					checkWidth(element, children);
+				}
+			} else {
+				checkWidth(element, children);
+			}
+			
 
-			checkWidth(element);
+			
 			
 		}
 	}
