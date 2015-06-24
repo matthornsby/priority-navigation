@@ -25,11 +25,8 @@
 	
 			var children = $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"]):not([data-priority="0"])').length;
 			
-<<<<<<< HEAD
-			checkWidth(element, children);
-=======
 			checkWidth(element);
->>>>>>> gh-pages
+
 	
 			$( window ).resize(function() {
 				
@@ -105,14 +102,9 @@
 		}
 		
 
-<<<<<<< HEAD
-		function hideTheHeighest(element, options, children){
-=======
+
 		function hideTheHeighest(element, options){
-			
-			
->>>>>>> gh-pages
-			
+
 			//console.log(children);
 			
 			if ( $(element).children(':not(.demoted):not([data-priority="more"]):not([data-priority="less"])').length < 2 ) {
@@ -153,25 +145,8 @@
 			});
 			$( '[data-priority="' + highestVisible + '"]', element).addClass("demoted");
 			
-			
-<<<<<<< HEAD
-			//this effects performance but is required for firefox
-			if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
-			{
-			    if (children > 0){
-					children = children -1;
-					checkWidth(element, children);
-				}
-			} else {
-				checkWidth(element, children);
-			}
-			
-
-			
-=======
 			checkWidth(element);
 
->>>>>>> gh-pages
 			
 		}
 	}
