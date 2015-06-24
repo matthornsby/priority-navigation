@@ -169,15 +169,16 @@ $(".toPrioritize").prioritize({
 			<p>Created by <a href="http://matthornsby.com">Matt Hornsby</a>, <span class="nowrap">originally for <a href="http://mycollegeadvocate.com">My College Advocate</a>.</span></p>
 		</footer>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="src/priority-navigation.min.js?1"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+        <script>window.jQuery || document.write('<script src="src/jquery-1.11.3.min.js"><\/script>')</script>
+		<!--<script src="src/priority-navigation.min.js"></script>-->
+		<script src="src/priority-navigation.js"></script>
 		<script>
 		$(function() {
 			$(".toPrioritize").prioritize({
 			    more: "More",
 			    less: "Less"
 			});
-			
 		});
 		</script>
 	</body>
