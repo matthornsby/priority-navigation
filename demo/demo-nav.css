@@ -109,7 +109,7 @@ body > header nav ul:not(.prioritized) li:nth-child(odd):not([data-priority="mor
 
 body > header nav ul.toPrioritize > li a{
 	padding: .75rem 1.25rem;
-	color: #bbbbbb;
+	color: #aaaaaa;
 	transition: color.33s;
 	overflow: visible;
 	overflow: visible;
@@ -144,7 +144,7 @@ body > header nav ul.prioritized> li[data-priority="less"] a::after{
 body > header nav ul.toPrioritize > li a:hover, 
 body > header nav ul.toPrioritize > li a:focus {
 	text-decoration: none;
-	color: #666666;
+	color: #555555;
 }
 
 body > header nav ul.prioritized> li[data-priority="more"] a:hover::after,
