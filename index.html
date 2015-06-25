@@ -17,12 +17,13 @@
 		<link rel="stylesheet" href="demo/demo-content.css"><!-- content styling, you don't need this -->
 	</head>
 	<body>
+		<a href="#main" id="skipmain" class="hidden">Skip to content</a>
 		<header>
-			<a href="#" rel="me" id="logo">&infin;</a>
+			<a href="#" rel="me" id="logo" aria-label="Demo Logo - infinity symbol">&infin;</a>
 			<nav>
 				<ul class="toPrioritize">
 					<li data-priority="0">
-						<a href="#">Priority-Navigation Demo</a>
+						<a href="#">Priority Navigation Demo</a>
 					</li>
 					<li data-priority="1">
 						<a href="#">Priority 1</a>
@@ -49,6 +50,7 @@
 				</ul>
 			</nav>
 		</header>
+		<main id="main">
 		<section>
 			
 			<article>
@@ -59,7 +61,7 @@
 				</header>
 				
 				<p>
-					It&rsquo;s become generally accepted that hiding menus by default, behind a hamburger icon for instance, can dampen discoverability and therefor engagement. <em>Priority Navigation</em> is a take on the <a href="https://css-tricks.com/the-priority-navigation-pattern/">Priority+ Navigation</a> pattern.
+					It&rsquo;s become generally accepted that hiding menus by default, behind a hamburger icon for instance, can dampen discoverability and therefor engagement. <strong>Priority Navigation</strong> is a take on the <a href="https://css-tricks.com/the-priority-navigation-pattern/">Priority+ Navigation</a> pattern.
 				</p>
 				
 				<p>
@@ -79,7 +81,7 @@
 <code>
 &lt;ul class=&quot;toPrioritize&quot;&gt;
   &lt;li data-priority=&quot;0&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;Priority-Navigation Demo&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Priority Navigation Demo&lt;/a&gt;
   &lt;/li&gt;
   &lt;li data-priority=&quot;1&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;Priority 1&lt;/a&gt;
@@ -113,7 +115,7 @@
 				
 				<p>Items with the same data-priority value are demoted simultaneously, given you the option of connecting particular elements as sets, this this example "Priority 4a" and "Priority 4b" both have a data-priority value of&nbsp;4.</p>
 				
-				<p>You may optionally include elements with a data-priority value of 0. These items are hidden from closed view, even if the menu has not been truncated. The original intention of this feature was to allow the display of a link to the site homepage as part of an opened menu, as a supplement to a link provided elsewhere. In this example "Priority-Navigation Demo" is only visible if the menu is opened, but is also accessible by clicking the logo (<span class="inline-logo">∞</span>).
+				<p>You may optionally include elements with a data-priority value of 0. These items are hidden from closed view, even if the menu has not been truncated. The original intention of this feature was to allow the display of a link to the site homepage as part of an opened menu, as a supplement to a link provided elsewhere. In this example "Priority Navigation Demo" is only visible if the menu is opened, but is also accessible by clicking the <span class="nowrap">logo (<span class="inline-logo" aria-label="Demo Logo - infinity symbol">∞</span>).</span>
 				</p>	
 					
 				<h2>The CSS</h2>
@@ -126,7 +128,7 @@
 					
 				<h2>The JavaScript</h2>
 				
-				<p>Include <a href="src/priority-navigation.min.js">src/priority-navigation.min.js</a> or its content in your own javascript. <a href="src/priority-navigation.js">An un-minified version</a> is available for your review.</p>
+				<p>Include jQuery and <a href="src/priority-navigation.min.js">src/priority-navigation.min.js</a> or its content in your own javascript. <a href="src/priority-navigation.js">An un-minified version</a> is available for your review.</p>
 				
 				<figure class="code">
 
@@ -164,6 +166,7 @@ $(".toPrioritize").prioritize({
 
 				
 		</section>
+		</main>
 		
 		<footer>
 			<p>Created by <a href="http://matthornsby.com">Matt Hornsby</a>, <span class="nowrap">originally for <a href="http://mycollegeadvocate.com">My College Advocate</a>.</span></p>

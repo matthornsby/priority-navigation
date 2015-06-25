@@ -8,9 +8,39 @@
 	white-space: nowrap;
 }
 
+
 body{
 	margin: 3% 3% 0 3%;
 	font-family: sans-serif;
+}
+
+#skipmain {
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px;
+	width: 1px; 
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	display: block;
+}
+
+
+#skipmain:focus{
+	clip: auto;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 15em;
+	height: auto;
+	margin: 0 0 0 -7.5em;
+	text-align: center;
+	padding: .5em;
+	color: #444444;
+	background: #eeeeee;
+	border-radius: 0 0 .4rem.4rem;
+	z-index: 5;
 }
 
 
@@ -73,20 +103,29 @@ section h1,
 section h2,
 section h3,
 section header{
-	color: #444444
+	color: #444444;
+	margin-bottom: 0em;
+}
+
+section article > h1 + *,
+section article > h2 + *,
+section article > h3 + *{
+	margin-top: 0;
 }
 
 section a{
 	color: #444444;
 	background-color: transparent;
-	transition: background-color .3s
+	transition: background-color .3s;
+	border-radius: .25em;
 }
 
 section a:hover,
 section a:focus{
-	padding: .125em;
-	margin: -.125em;
+	padding: .25em;
+	margin: -.25em;
 	background-color: #eeeeee;
+	color: #444444;
 }
 
 
@@ -128,10 +167,14 @@ section > article > header p{
 	background: #eeeeee;
 	font-family: monospace;
 	white-space: pre-wrap;
-	color: #666666;
+	color: #444444;
 	font-size: 1.25em;
 	border-radius: .25em;
 	
+}
+
+figure{
+	margin: 2em 0;
 }
 
 figure figcaption{
@@ -166,7 +209,7 @@ a.button{
 
 a.button:hover,
 a.button:focus{
-
+	
 	padding: 3%;
 	color: #ffffff;
 	margin: 0 auto;
