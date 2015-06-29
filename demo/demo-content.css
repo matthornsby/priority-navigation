@@ -8,23 +8,21 @@
 	white-space: nowrap;
 }
 
-
 body{
 	margin: 3% 3% 0 3%;
 	font-family: sans-serif;
 }
 
 #skipmain {
-	overflow: hidden; 
-	clip: rect(0 0 0 0); 
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 	height: 1px;
-	width: 1px; 
+	width: 1px;
 	margin: -1px;
 	padding: 0;
 	border: 0;
 	display: block;
 }
-
 
 #skipmain:focus{
 	clip: auto;
@@ -43,7 +41,6 @@ body{
 	z-index: 5;
 }
 
-
 body > header #logo{
 	position: absolute;
 	width: 6rem;
@@ -55,14 +52,11 @@ body > header #logo{
 	text-align: center;
 	color: #ffffff;
 	text-decoration: none;
-	
 	text-transform: uppercase;
-	
 	font-size: 6rem;
 	line-height: 1;
 	overflow: hidden;
 	border-radius: .4rem;
-	
 	transition: background-color .33s
 }
 
@@ -70,7 +64,6 @@ body > header #logo:hover,
 body > header #logo:focus{
 	background-color: #444444;
 }
-
 
 .inline-logo{
 	background: #777777;
@@ -85,11 +78,8 @@ body > header #logo:focus{
 	line-height: 1;
 	overflow: hidden;
 	border-radius: .1em;
-	
 	transition: background-color .33s
 }
-
-
 
 section {
 	padding:0 6.5rem;
@@ -127,8 +117,6 @@ section a:focus{
 	background-color: #eeeeee;
 	color: #444444;
 }
-
-
 
 section > article {
 	max-width: 32rem;
@@ -170,7 +158,6 @@ section > article > header p{
 	color: #444444;
 	font-size: 1.25em;
 	border-radius: .25em;
-	
 }
 
 figure{
@@ -183,7 +170,6 @@ figure figcaption{
 	margin: 0;
 }
 
-
 .button-wrapper{
 	text-align: center;
 	font-size: 1.5em;
@@ -191,13 +177,11 @@ figure figcaption{
 
 
 a.button{
-	
 	display: inline-block;
 	min-width: 7em;
 	text-align: center;
 	padding: 3%;
 	color: #ffffff;
-	
 	border-radius: .25rem;
 	text-decoration: none;
 	margin: 0 auto .5em !important;
@@ -206,10 +190,8 @@ a.button{
 	top: -1px;
 }
 
-
 a.button:hover,
 a.button:focus{
-	
 	padding: 3%;
 	color: #ffffff;
 	margin: 0 auto;
@@ -228,10 +210,7 @@ a.download{
 	background: #5abae6 !important;
 }
 
-
 a.button:after{
-	
-	
 	font-weight: bold;
 	display: inline-block;
 	background: rgba(255,255,255,.75);
@@ -241,7 +220,6 @@ a.button:after{
 	border-radius: .125em;
 	transition: background-color .3s;
 }
-
 
 a.github:after{
 	color: #60b044;
@@ -259,7 +237,6 @@ a.button:focus:after{
 	background: #ffffff
 }
 
-
 footer{
 	background: #eeeeee;
 	width: 100%;
@@ -268,7 +245,6 @@ footer{
 	padding: 3%;
 	border-top: solid 1px #dddddd;
 	color: #666666;
-
 }
 
 footer a{
@@ -282,15 +258,14 @@ footer a:focus{
 }
 
 @media only screen and (max-width: 40em) {
-	
+
 	body > header{
 		padding-left: 3rem;
 		padding-left: calc(2.5rem + 3%);
 		height: auto;
 		min-height: 0;
 	}
-	
-	
+
 	body > header #logo{
 		height: 2.5rem;
 		width: 2.5rem;
@@ -301,20 +276,16 @@ footer a:focus{
 		margin-left: 3rem;
 		margin-left: calc(-2.5rem - 3%);
 	}
-	
-	
 
-	
 	section {
 		padding:0 3rem;
 		padding: 0 calc(2.5rem + 3%)
 	}
-	
+
 	section > article > header {
 		width: 100%;
 	}
 
-	
 }
 
 @media only screen and (max-width: 30em) {
@@ -322,17 +293,16 @@ footer a:focus{
 	section {
 		padding:0;
 		font-size: .9rem;
-	}	
-	
-	
+	}
+
 	.code code{
 		border-radius: 0;
 	}
-	
+
 	footer{
 		font-size: .9rem;
 	}
-	
+
 }
 
 @media only screen and (max-width: 25em) {
@@ -341,13 +311,11 @@ footer a:focus{
 	}
 }
 
-
 @media only screen and (min-width: 66em) {
 	html{
 		font-size: 115%;
 	}
 }
-
 
 @media only screen and (min-width: 75em) {
 	html{
