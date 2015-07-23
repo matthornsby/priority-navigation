@@ -8,7 +8,7 @@ It’s become generally accepted that hiding menus by default, behind a hamburge
 
 >[Revisiting the Priority+ Navigation Pattern](http://bradfrost.com/blog/post/revisiting-the-priority-pattern/), Brad Frost
 
-The main feature that sets it apart from other examples, is that it allows for prioritization ordering independent from menu ordering. Menu item prioritization is managed by applying data-attributes to the elements.
+The main feature that sets Priority Navigation apart from other examples, is that it allows for prioritization ordering independent from menu ordering. Menu item prioritization is managed by applying data-attributes to the elements.
 
 ### The HTML
 
