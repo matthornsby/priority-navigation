@@ -145,7 +145,7 @@ body > header nav ul.prioritized> li[data-priority="less"] a:focus::after{
 	border-bottom-color: #666666;
 }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
 
 	body > header{
 		padding-left: 3rem;

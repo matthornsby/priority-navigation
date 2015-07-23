@@ -170,6 +170,45 @@ figure figcaption{
 	margin: 0;
 }
 
+blockquote {
+	padding: 3% 0;
+	margin: 1.5em 0;
+	padding-left: 3%;
+	border-left: solid 5px #eeeeee;
+	font-style: italic;
+	position: relative;
+}
+
+blockquote p{
+	margin: 3% 0;
+	margin: calc(3% - 5px) 0
+}
+
+blockquote:before,
+blockquote:after{
+	display: block;
+	width: 1.5%;
+	height: 5px;
+	position: absolute;
+	background-color: #eeeeee;
+	content: "";
+	left: 0;
+	top: 0;
+}
+
+blockquote:after{
+	top: auto;
+	bottom: 0;
+}
+
+blockquote footer{
+	font-style: normal;
+}
+
+blockquote > :first-child{
+	margin-top: 0;
+}
+
 .button-wrapper{
 	text-align: center;
 	font-size: 1.5em;
@@ -237,7 +276,7 @@ a.button:focus:after{
 	background: #ffffff
 }
 
-footer{
+body > footer{
 	background: #eeeeee;
 	width: 100%;
 	margin: 3% -3% 0;
@@ -247,7 +286,7 @@ footer{
 	color: #666666;
 }
 
-footer a{
+body > footer a{
 	color: #666666;
 	transition: color .3s;
 }
@@ -257,7 +296,7 @@ footer a:focus{
 	color: #444444;
 }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
 
 	body > header{
 		padding-left: 3rem;
@@ -299,7 +338,7 @@ footer a:focus{
 		border-radius: 0;
 	}
 
-	footer{
+	body > footer{
 		font-size: .9rem;
 	}
 
