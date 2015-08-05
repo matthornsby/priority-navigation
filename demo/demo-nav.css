@@ -20,6 +20,7 @@ body > header nav {
 
 body > header nav ul {
 	overflow: hidden;
+
 }
 
 body > header nav ul.prioritized:not(.opened) {
@@ -29,6 +30,7 @@ body > header nav ul.prioritized:not(.opened) {
 	margin-left: -2px;
 	height: 2.5rem;
 	height: calc(2.5rem - 2px);
+	
 }
 
 body > header nav > ul.toPrioritize > li{
