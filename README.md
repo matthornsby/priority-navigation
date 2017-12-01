@@ -54,7 +54,7 @@ The toPrioritize class is used for formatting, so even if you define the functio
 
 The default styling displays the menu items as inline-block, which lets you align it as normal text. However, my demo includes [additional styling](https://github.com/matthornsby/priority-navigation/blob/master/demo/demo-nav.css) to display the menu as a table which allows to fully-justify the menu.
 
-###The JavaScript
+### The JavaScript
 
 Include [src/priority-navigation.min.js](https://github.com/matthornsby/priority-navigation/blob/master/src/priority-navigation.min.js) or its content in your own javascript. [An un-minified version](https://github.com/matthornsby/priority-navigation/blob/master/src/priority-navigation.js) is available for your review.
 
